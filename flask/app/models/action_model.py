@@ -7,7 +7,7 @@ class Action(db.Model):
     resources = db.relationship('Resource', backref='action', lazy=True)
 
     def __repr__(self):
-        return '<Role %r>' % self.id
+        return '<Action %r>' % self.id
 
     def to_dict(self):
         return {

@@ -54,7 +54,7 @@ def controller_delete(id):
     controller = Controller.query.get(id)
 
     if controller == None:
-        return jsonify({"message": "A controller informada não existe."})
+        return jsonify({"message": "O controller informada não existe."})
 
     try:
         db.session.delete(controller)
