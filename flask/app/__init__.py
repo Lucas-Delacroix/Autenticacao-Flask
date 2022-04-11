@@ -29,6 +29,7 @@ from app.models.action_model import Action
 
 from app.controllers import user_controller
 from app.controllers import role_controller
+from app.controllers import controller_controller
 
 
 

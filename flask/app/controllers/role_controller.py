@@ -21,6 +21,7 @@ def role_add():
         db.session.rollback()
         return jsonify({"error":True, "message": "Erro ao criar role, informações já existem no banco."}), 200
 
+
 @app.route("/role/list", methods=["GET"])
 def role_list():
     rolies = Role.query.all()
