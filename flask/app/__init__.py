@@ -32,6 +32,7 @@ from app.controllers import role_controller
 from app.controllers import controller_controller
 from app.controllers import action_controller
 from app.controllers import resource_controller
+from app.controllers import privilege_controller
 
 
 
