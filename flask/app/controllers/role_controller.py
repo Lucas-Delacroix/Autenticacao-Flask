@@ -37,7 +37,7 @@ def role_edit(id):
     role = Role.query.get(id)
 
     if role == None:
-        return jsonify({"message": "A role informada não existe."})
+        return jsonify({"error": True, "message": "A role informada não existe."})
 
     try:
         role.name = data["name"]
@@ -54,7 +54,7 @@ def role_delete(id):
     role = Role.query.get(id)
 
     if role == None:
-        return jsonify({"message": "A role informada não existe."})
+        return jsonify({"error": True, "message": "A role informada não existe."})
 
     try:
         db.session.delete(role)
@@ -71,7 +71,7 @@ def role_view(id):
     role = Role.query.get(id)
 
     if role == None:
-        return jsonify({"message": "A role informada não existe."})
+        return jsonify({"error": True, "message": "A role informada não existe."})
 
     try:
         return jsonify({"data": role.to_dict(), "error": False})

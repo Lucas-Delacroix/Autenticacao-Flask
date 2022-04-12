@@ -37,7 +37,7 @@ def controller_edit(id):
     controller = Controller.query.get(id)
 
     if controller == None:
-        return jsonify({"message": "O controller informado não existe."})
+        return jsonify({"error": True, "message": "O controller informado não existe."})
 
     try:
         controller.name = data["name"]
@@ -54,7 +54,7 @@ def controller_delete(id):
     controller = Controller.query.get(id)
 
     if controller == None:
-        return jsonify({"message": "O controller informada não existe."})
+        return jsonify({"error": True, "message": "O controller informada não existe."})
 
     try:
         db.session.delete(controller)
@@ -71,7 +71,7 @@ def controller_view(id):
     controller = Controller.query.get(id)
 
     if controller == None:
-        return jsonify({"message": "O Controller informada não existe."})
+        return jsonify({"error": True, "message": "O Controller informada não existe."})
 
     try:
         return jsonify({"data": controller.to_dict(), "error": False})

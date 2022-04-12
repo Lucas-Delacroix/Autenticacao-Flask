@@ -37,7 +37,7 @@ def action_edit(id):
     action = Action.query.get(id)
 
     if action == None:
-        return jsonify({"message": "O action informado não existe."})
+        return jsonify({"error": True, "message": "O action informado não existe."})
 
     try:
         action.name = data["name"]
@@ -54,7 +54,7 @@ def action_delete(id):
     action = Action.query.get(id)
 
     if action == None:
-        return jsonify({"message": "A action informada não existe."})
+        return jsonify({"error": True, "message": "A action informada não existe."})
 
     try:
         db.session.delete(action)
@@ -71,7 +71,7 @@ def action_view(id):
     action = Action.query.get(id)
 
     if action == None:
-        return jsonify({"message": "O action informada não existe."})
+        return jsonify({"error": True, "message": "O action informada não existe."})
 
     try:
         return jsonify({"data": action.to_dict(), "error": False})

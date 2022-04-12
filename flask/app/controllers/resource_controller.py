@@ -39,7 +39,7 @@ def resource_edit(id):
     resource = Resource.query.get(id)
 
     if resource == None:
-        return jsonify({"message": "O resource informado não existe."})
+        return jsonify({"error": True, "message": "O resource informado não existe."})
 
     try:
         if "action_id" in data:
@@ -60,7 +60,7 @@ def resource_delete(id):
     resource = Resource.query.get(id)
 
     if resource == None:
-        return jsonify({"message": "A resource informada não existe."})
+        return jsonify({"error": True, "message": "A resource informada não existe."})
 
     try:
         db.session.delete(resource)
@@ -77,7 +77,7 @@ def resource_view(id):
     resource = Resource.query.get(id)
 
     if resource == None:
-        return jsonify({"message": "O resource informada não existe."})
+        return jsonify({"error": True, "message": "O resource informada não existe."})
 
     try:
         return jsonify({"data": resource.to_dict(), "error": False})
