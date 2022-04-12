@@ -78,5 +78,5 @@ def role_view(id):
 
     except:
         db.session.rollback()
-        return jsonify({"error": True, "message": "Erro ao deletar role."}), 200
+        return jsonify({"error": True, "message": "Erro ao visualizar role."}), 200
 

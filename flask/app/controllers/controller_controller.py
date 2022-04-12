@@ -78,5 +78,5 @@ def controller_view(id):
 
     except:
         db.session.rollback()
-        return jsonify({"error": True, "message": "Erro ao deletar controller."}), 200
+        return jsonify({"error": True, "message": "Erro ao visualizar controller."}), 200
 

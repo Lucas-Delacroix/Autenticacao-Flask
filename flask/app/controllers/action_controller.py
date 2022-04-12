@@ -78,5 +78,5 @@ def action_view(id):
 
     except:
         db.session.rollback()
-        return jsonify({"error": True, "message": "Erro ao deletar action."}), 200
+        return jsonify({"error": True, "message": "Erro ao visualizar action."}), 200
 
