@@ -1,6 +1,6 @@
 {
 	"info": {
-		"_postman_id": "c5be86e6-0387-4f3b-b694-aabd2463f7e2",
+		"_postman_id": "bc9ed247-b321-4a10-8107-d5795ea3f522",
 		"name": "Autenticação Flask",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
 	},
@@ -15,7 +15,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"email\": \"admin2@email.com\",\n    \"password\": \"admin\",\n    \"role_id\": 2\n}",
+							"raw": "{\n    \"email\": \"lucas.123456@email.com\",\n    \"password\": \"123456\",\n    \"role_id\": 2\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -141,7 +141,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"name\": \"firstrole\"\n}",
+							"raw": "{\n    \"name\": \"Usuário2\"\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -190,7 +190,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"name\": \"ThirdRole\"\n}",
+							"raw": "{\n    \"name\": \"Administrador\"\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -198,7 +198,7 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:5000/role/edit/7",
+							"raw": "http://localhost:5000/role/edit/1",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -207,7 +207,7 @@
 							"path": [
 								"role",
 								"edit",
-								"7"
+								"1"
 							]
 						}
 					},
@@ -288,7 +288,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"name\": \"controller_2\"\n}",
+							"raw": "{\n    \"name\": \"controller_1\"\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -434,7 +434,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"name\": \"Action3\"\n}",
+							"raw": "{\n    \"name\": \"Reset\"\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -492,7 +492,7 @@
 						"method": "DELETE",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:5000/action/delete/4",
+							"raw": "http://localhost:5000/action/delete/3",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -501,7 +501,7 @@
 							"path": [
 								"action",
 								"delete",
-								"4"
+								"3"
 							]
 						}
 					},
@@ -560,7 +560,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"action_id\": 3,\n    \"controller_id\": 3\n}",
+							"raw": "{\n    \"action_id\": 1,\n    \"controller_id\": 1\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -686,7 +686,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"role_id\": 2,\n    \"resource_id\": 1,\n    \"allow\": true\n}",
+							"raw": "{\n    \"role_id\": 1,\n    \"resource_id\": 1,\n    \"allow\": true\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -769,7 +769,7 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:5000/privilege/view/2/1/false",
+							"raw": "http://localhost:5000/privilege/view/1/1",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -778,9 +778,8 @@
 							"path": [
 								"privilege",
 								"view",
-								"2",
 								"1",
-								"false"
+								"1"
 							]
 						}
 					},
@@ -795,7 +794,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\n    \"email\": \"admin@1234.email.com\",\n    \"password\": \"1234\"\n}",
+					"raw": "{\n    \"email\": \"admin@email.com\",\n    \"password\": \"admin\"\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -823,7 +822,7 @@
 				"header": [
 					{
 						"key": "Authorization",
-						"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJmcmVzaCI6ZmFsc2UsImlhdCI6MTY0OTgxNTUwOSwianRpIjoiYzA0Y2Y4ODAtZjZhNy00Yjg4LWJlYTAtMmZkOTVmZTRlMzRiIiwidHlwZSI6ImFjY2VzcyIsInN1YiI6ImFkbWluQDEyMzQuZW1haWwuY29tIiwibmJmIjoxNjQ5ODE1NTA5LCJleHAiOjE2NDk4MTU1Njl9.ZUhI-02oudZHolkRnLmhZH2E9xUP76M3ZYVq8EAjA8k",
+						"value": "Bearer     eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJmcmVzaCI6ZmFsc2UsImlhdCI6MTY0OTg1OTI2MCwianRpIjoiNzYzOGIwNjgtY2FkNy00NzdmLWJhNzUtMGUxM2U5YmUxNDE0IiwidHlwZSI6ImFjY2VzcyIsInN1YiI6ImFkbWluQGVtYWlsLmNvbSIsIm5iZiI6MTY0OTg1OTI2MCwiZXhwIjoxNjQ5ODYwNDYwfQ.w28W6Dv-5wYWiHaTolB9eWR-rzNYKDuCMe5Z0vMy8LM",
 						"type": "default"
 					}
 				],
@@ -836,6 +835,31 @@
 					"port": "5000",
 					"path": [
 						"me"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Refresh-Token",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJmcmVzaCI6ZmFsc2UsImlhdCI6MTY0OTg0ODY3MywianRpIjoiYmY3ZTY2YjYtYzlhNi00OWQ5LWEzYzQtMjU3YzZmNDA5MzdjIiwidHlwZSI6InJlZnJlc2giLCJzdWIiOiJhZG1pbkBlbWFpbC5jb20iLCJuYmYiOjE2NDk4NDg2NzMsImV4cCI6MTY0OTg0ODk3M30.6VKetSIt7tpa747zgW4r14tz4ku5-iC3hfCwEGFmZFU",
+						"type": "default"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:5000/refresh-token",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"refresh-token"
 					]
 				}
 			},
