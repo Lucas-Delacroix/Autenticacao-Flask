@@ -85,7 +85,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"email\": \"admin@email@ifce.com.br\"\n}",
+							"raw": "{\n    \"email\": \"admin@1234.email.com\"\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -787,6 +787,59 @@
 					"response": []
 				}
 			]
+		},
+		{
+			"name": "Login",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"email\": \"admin@1234.email.com\",\n    \"password\": \"1234\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5000/login",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "ME",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJmcmVzaCI6ZmFsc2UsImlhdCI6MTY0OTgxNTUwOSwianRpIjoiYzA0Y2Y4ODAtZjZhNy00Yjg4LWJlYTAtMmZkOTVmZTRlMzRiIiwidHlwZSI6ImFjY2VzcyIsInN1YiI6ImFkbWluQDEyMzQuZW1haWwuY29tIiwibmJmIjoxNjQ5ODE1NTA5LCJleHAiOjE2NDk4MTU1Njl9.ZUhI-02oudZHolkRnLmhZH2E9xUP76M3ZYVq8EAjA8k",
+						"type": "default"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:5000/me",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"me"
+					]
+				}
+			},
+			"response": []
 		}
 	],
 	"variable": [

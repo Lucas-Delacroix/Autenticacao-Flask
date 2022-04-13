@@ -2,6 +2,10 @@ from flask import Flask
 from flask_script import Manager, Server
 from flask_sqlalchemy import SQLAlchemy
 from flask_migrate import Migrate, MigrateCommand 
+from flask_jwt_extended import JWTManager
+import datetime
+
+
 #from flask.ext.hashing import Hashing 
 
 
@@ -19,6 +23,12 @@ server = Server(host=host, port=port)
 manager.add_command("runserver", server)
 manager.add_command("db", MigrateCommand)
 
+# Setup the Flask-JWT-Extended extension
+app.config["JWT_SECRET_KEY"] = "lucas-legal"  
+app.config["JWT_ACCESS_TOKEN_EXPIRES"] = datetime.timedelta(minutes=1)
+
+jwt = JWTManager(app)
+
 
 from app.models.user_model import User
 from app.models.role_model import Role
@@ -33,6 +43,8 @@ from app.controllers import controller_controller
 from app.controllers import action_controller
 from app.controllers import resource_controller
 from app.controllers import privilege_controller
+
+from app.controllers import Auth
 
 
 
