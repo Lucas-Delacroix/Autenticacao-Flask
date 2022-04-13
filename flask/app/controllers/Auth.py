@@ -10,6 +10,9 @@ from flask_jwt_extended import jwt_required
 from flask_jwt_extended import JWTManager
 import datetime
 import jwt
+from app.controllers.__init__ import admin_required
+
+
 
 
 
@@ -41,6 +44,7 @@ def login():
 
 @app.route("/me", methods=["GET"])
 @jwt_required()
+@admin_required()
 def me():
     user_logado = get_jwt_identity()
     return jsonify(usuario_logado=user_logado), 200
@@ -52,3 +56,4 @@ def refresh_token():
     identity = get_jwt_identity()
     access_token = create_access_token(identity=identity)
     return jsonify(access_token=access_token)
+

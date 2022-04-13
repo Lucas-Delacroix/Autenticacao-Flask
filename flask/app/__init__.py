@@ -25,11 +25,12 @@ manager.add_command("db", MigrateCommand)
 
 # Setup the Flask-JWT-Extended extension
 app.config["JWT_SECRET_KEY"] = "lucas-legal"  
-app.config["JWT_ACCESS_TOKEN_EXPIRES"] = datetime.timedelta(minutes=1)
-app.config["JWT_REFRESH_TOKEN_EXPIRES"] = datetime.timedelta(minutes=5)
+app.config["JWT_ACCESS_TOKEN_EXPIRES"] = datetime.timedelta(minutes=20)
+app.config["JWT_REFRESH_TOKEN_EXPIRES"] = datetime.timedelta(minutes=30)
 
 
 jwt = JWTManager(app)
+
 
 
 from app.models.user_model import User
@@ -39,6 +40,7 @@ from app.models.privilege_model import Privilege
 from app.models.controller_model import Controller
 from app.models.action_model import Action
 
+
 from app.controllers import user_controller
 from app.controllers import role_controller
 from app.controllers import controller_controller
@@ -46,6 +48,7 @@ from app.controllers import action_controller
 from app.controllers import resource_controller
 from app.controllers import privilege_controller
 
+from app.controllers import __init__
 from app.controllers import Auth
 
 

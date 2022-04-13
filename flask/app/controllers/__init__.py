@@ -1,8 +1,9 @@
 from functools import wraps
-
+import jwt
 from flask import Flask
 from flask import jsonify
-
+from app import app, db
+from app import User
 from flask_jwt_extended import create_access_token
 from flask_jwt_extended import get_jwt
 from flask_jwt_extended import JWTManager
@@ -15,11 +16,10 @@ def admin_required():
         @wraps(fn)
         def decorator(*args, **kwargs):
             verify_jwt_in_request()
-            claims = get_jwt()
-            if claims["is_administrator"]:
-                return fn(*args, **kwargs)
-            else:
-                return jsonify(msg="Admins only!"), 403
+            teste = get_jwt()
+            user = User.query.filter_by(email=teste["sub"]).first()
+            return jsonify({"email": user.email, "id": user.id, "role": user.role_id})
+
 
         return decorator
 
