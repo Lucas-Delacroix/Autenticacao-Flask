@@ -10,7 +10,7 @@ def role_add():
     if "name" not in data or data["name"] is None:
         return jsonify({"error":True, "message": "name não foi informado."}), 400
     
-    role = Role(name=data["name"], users=[], privilegies=[])
+    role = Role(name=data["name"])
 
     try:
         db.session.add(role)

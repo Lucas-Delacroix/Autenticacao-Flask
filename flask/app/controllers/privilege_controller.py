@@ -37,10 +37,10 @@ def privilege_list():
     return jsonify({"elements": arr, "error": False})
 
 
-@app.route("/privilege/edit/<int:role_id>/<int:resource_id>/<string:allow>", methods=["PUT"])
-def privilege_edit(role_id, resource_id, allow):
+@app.route("/privilege/edit/<int:role_id>/<int:resource_id>", methods=["PUT"])
+def privilege_edit(role_id, resource_id):
     data = request.get_json()
-    privileges = Privilege.query.filter_by(role_id=role_id, resource_id=resource_id, allow=allow)
+    privileges = Privilege.query.filter_by(role_id=role_id, resource_id=resource_id)
 
     if privileges == None:
         return jsonify({"error": True, "message": "O privilege informado não existe."})
@@ -67,9 +67,9 @@ def privilege_edit(role_id, resource_id, allow):
         return jsonify({"error": True, "message": "Erro ao editar privilege."}), 200
 
 
-@app.route("/privilege/delete/<int:role_id>/<int:resource_id>/<string:allow>", methods=["DELETE"])
-def privilege_delete(role_id, resource_id, allow):
-    privileges = Privilege.query.filter_by(role_id=role_id, resource_id=resource_id, allow=allow)
+@app.route("/privilege/delete/<int:role_id>/<int:resource_id>", methods=["DELETE"])
+def privilege_delete(role_id, resource_id):
+    privileges = Privilege.query.filter_by(role_id=role_id, resource_id=resource_id)
 
     if privileges == None:
         return jsonify({"error": True, "message": "A privilege informada não existe."})
@@ -88,9 +88,9 @@ def privilege_delete(role_id, resource_id, allow):
         return jsonify({"error": True, "message": "Erro ao deletar privilege."}), 200
 
 
-@app.route("/privilege/view/<int:role_id>/<int:resource_id>/<string:allow>", methods=["GET"])
-def privilege_view(role_id, resource_id, allow):
-    privileges = Privilege.query.filter_by(role_id=role_id, resource_id=resource_id, allow=allow)
+@app.route("/privilege/view/<int:role_id>/<int:resource_id>", methods=["GET"])
+def privilege_view(role_id, resource_id):
+    privileges = Privilege.query.filter_by(role_id=role_id, resource_id=resource_id)
     
     if privileges == None:
         return jsonify({"error": True, "message": "O privilege informada não existe."})
