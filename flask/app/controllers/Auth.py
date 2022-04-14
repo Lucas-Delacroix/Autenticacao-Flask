@@ -10,7 +10,7 @@ from flask_jwt_extended import jwt_required
 from flask_jwt_extended import JWTManager
 import datetime
 import jwt
-from app.controllers.__init__ import admin_required
+from app.controllers.__init__ import resource
 
 
 
@@ -49,10 +49,9 @@ def me():
     return jsonify(usuario_logado=user_logado), 200
 
 @app.route("/protegido", methods=["GET"])
-@admin_required(controller="Admin", action="ADD")
+@resource(controller="Admin", action="ADD")
 def protegido():
     return jsonify({"msg": "Você está vendo uma mensagem protegida."})
-
 
 @app.route("/refresh-token", methods=["POST"])
 @jwt_required(refresh=True)
