@@ -44,10 +44,14 @@ def login():
 
 @app.route("/me", methods=["GET"])
 @jwt_required()
-@admin_required()
 def me():
     user_logado = get_jwt_identity()
     return jsonify(usuario_logado=user_logado), 200
+
+@app.route("/protegido", methods=["GET"])
+@admin_required(controller="Admin", action="ADD")
+def protegido():
+    return jsonify({"msg": "Você está vendo uma mensagem protegida."})
 
 
 @app.route("/refresh-token", methods=["POST"])

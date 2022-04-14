@@ -1,6 +1,6 @@
 {
 	"info": {
-		"_postman_id": "bc9ed247-b321-4a10-8107-d5795ea3f522",
+		"_postman_id": "07e5a6cc-247a-418f-b074-941e5489b8a3",
 		"name": "Autenticação Flask",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
 	},
@@ -141,7 +141,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"name\": \"Usuário2\"\n}",
+							"raw": "{\n    \"name\": \"Usuário\"\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -288,7 +288,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"name\": \"controller_1\"\n}",
+							"raw": "{\n    \"name\": \"Admin\"\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -434,7 +434,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"name\": \"Reset\"\n}",
+							"raw": "{\n    \"name\": \"ADD\"\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -860,6 +860,31 @@
 					"port": "5000",
 					"path": [
 						"refresh-token"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Protegido",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer     eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJmcmVzaCI6ZmFsc2UsImlhdCI6MTY0OTg5NTA5MywianRpIjoiZDJiMTc1YjAtMmRiYi00Y2VmLWFlODgtZmYzYTgyMDdjOWJmIiwidHlwZSI6ImFjY2VzcyIsInN1YiI6ImFkbWluQGVtYWlsLmNvbSIsIm5iZiI6MTY0OTg5NTA5MywiZXhwIjoxNjQ5ODk2MjkzfQ.x174KkgS5o1muhVBip5RIqedg49Z88ptJgdoPZXPygc",
+						"type": "default"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:5000/protegido",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"protegido"
 					]
 				}
 			},
