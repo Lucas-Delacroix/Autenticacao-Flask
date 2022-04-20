@@ -12,13 +12,6 @@ import datetime
 import jwt
 from app.controllers.__init__ import resource
 
-
-
-
-
-""" Criar endpoints chamados 1-Login, 2-Refresh Token, 3-Me """
-
-
 @app.route("/login", methods=["POST"])
 def login():
     data = request.get_json()

@@ -9,8 +9,6 @@ from flask_jwt_extended import get_jwt
 from flask_jwt_extended import JWTManager
 from flask_jwt_extended import verify_jwt_in_request
 
-
-
 def resource(controller, action):
     def wrapper(fn):
         @wraps(fn)
