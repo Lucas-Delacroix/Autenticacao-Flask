@@ -29,7 +29,7 @@ def login():
         return jsonify({"error":True, "message": "A senha não foi informada."}), 400
     
 
-    hash_senha = generate_password_hash(data["password"], method='sha256')
+    #hash_senha = generate_password_hash(data["password"], method='sha256')
 
     user = User.query.filter_by(email=data["email"]).first_or_404()
 

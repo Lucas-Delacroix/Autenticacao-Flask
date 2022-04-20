@@ -22,12 +22,17 @@ def resource(controller, action):
             user = User.query.filter_by(email=teste["sub"]).first()
             
             relacao_privilege = Privilege.query.filter_by(role_id=user.role_id).first()
-            relacao_resource = Resource.query.filter_by(id=relacao_privilege.resource_id).first()
+            if relacao_privilege == None:
+                return jsonify(msg="Você não tem permissão para acessar essa rota."), 403
             
+            relacao_resource = Resource.query.filter_by(id=relacao_privilege.resource_id).first()
             relacao_controller = Controller.query.get(relacao_resource.controller_id)
             relacao_action = Action.query.get(relacao_resource.action_id)
+            
+            if (relacao_controller.name == None) or (relacao_action.name == None):
+                return jsonify(msg="Você não tem permissão para acessar essa rota."), 403
 
-            if (relacao_controller.name == controller) and (relacao_action.name == action):
+            elif (relacao_controller.name == controller) and (relacao_action.name == action):
                 return fn(*args, **kwargs)
             else:
                 return jsonify(msg="Você não tem permissão para acessar essa rota."), 403
