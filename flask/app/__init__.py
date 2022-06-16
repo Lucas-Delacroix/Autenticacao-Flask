@@ -4,6 +4,8 @@ from flask_sqlalchemy import SQLAlchemy
 from flask_migrate import Migrate, MigrateCommand 
 from flask_jwt_extended import JWTManager
 import datetime
+from flask_cors import CORS
+
 
 
 #from flask.ext.hashing import Hashing 
@@ -15,6 +17,9 @@ db = SQLAlchemy(app)
 migrate = Migrate(app, db)
 manager = Manager(app)
 #hashing = Hashing(app)
+
+CORS(app)
+
 
 host = app.config["FLASK_HOST"]
 port = app.config["FLASK_PORT"]
