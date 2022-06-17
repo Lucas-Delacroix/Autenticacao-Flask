@@ -47,7 +47,7 @@ class Login extends React.Component {
 
         })
         .catch((error) => {
-            alert('Senha ou Email Incorretos, por favor tente novamente.')
+            this.setState({msg: "Por favor preencha todos os campos adequadamente."})
             console.log(error);
         })
         
