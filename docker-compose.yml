@@ -30,15 +30,15 @@ services:
     depends_on:
       - db
       
-  reactjs:
-    container_name: autenticacao-flask_reactjs
-    build:
-      context: ./front-autenticacao
-      dockerfile: Dockerfile
-    volumes:
-      - './front-autenticacao:/app'
-      - './front-autenticacao/app/node_modules'
-    ports:
-      - '3001:3000'
-    environment:
-      - NODE_ENV=development
+  # reactjs:
+  #   container_name: autenticacao-flask_reactjs
+  #   build:
+  #     context: ./front-autenticacao
+  #     dockerfile: Dockerfile
+  #   volumes:
+  #     - './front-autenticacao:/app'
+  #     - './front-autenticacao/app/node_modules'
+  #   ports:
+  #     - '3001:3000'
+  #   environment:
+  #     - NODE_ENV=development
