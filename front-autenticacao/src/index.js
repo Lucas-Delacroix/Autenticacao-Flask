@@ -12,6 +12,8 @@ import Login from './Componentes/Login';
 import Me from './Componentes/Me';
 import Cadastro from './Componentes/Cadastro';
 import Header from './Componentes/Header';
+import  'bootstrap/dist/css/bootstrap.min.css' ;
+
 
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
