@@ -11,12 +11,14 @@ import App from './App';
 import Login from './Componentes/Login';
 import Me from './Componentes/Me';
 import Cadastro from './Componentes/Cadastro';
+import Header from './Componentes/Header';
 
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
     <Router>
+    <Header/>
       <Routes>
         <Route path="/me" element={<Me />}/>
         <Route path="/login" element={<Login />}/>
