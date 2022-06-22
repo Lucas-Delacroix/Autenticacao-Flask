@@ -30,7 +30,7 @@ manager.add_command("db", MigrateCommand)
 
 # Setup the Flask-JWT-Extended extension
 app.config["JWT_SECRET_KEY"] = "lucas-legal"  
-app.config["JWT_ACCESS_TOKEN_EXPIRES"] = datetime.timedelta(minutes=20)
+app.config["JWT_ACCESS_TOKEN_EXPIRES"] = datetime.timedelta(minutes=5)
 app.config["JWT_REFRESH_TOKEN_EXPIRES"] = datetime.timedelta(minutes=660)
 
 

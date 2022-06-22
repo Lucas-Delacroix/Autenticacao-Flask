@@ -14,7 +14,7 @@ def user_add():
     if "password" not in data or data["password"] is None:
         return jsonify({"error":True, "message": "A senha não foi informada."}), 400
     if "role_id" not in data or data["role_id"] is None:
-        return jsonify({"error":True, "message": "role_id não foi informada."}), 400
+        data["role_id"]=2
     
     hash_senha = generate_password_hash(data["password"], method='sha256')
     

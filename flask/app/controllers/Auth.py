@@ -32,7 +32,7 @@ def login():
     access_token = create_access_token(identity=user.email)
     refresh_token = create_refresh_token(identity=user.email)
 
-    return jsonify(access_token=access_token, refresh_token=refresh_token, messagem="Seu login foi efetuado com sucesso. Seu token de acesso foi gerado.")
+    return jsonify(access_token=access_token, refresh_token=refresh_token, messagem="Seu login foi efetuado com sucesso. Seu token de acesso foi gerado.", error=False)
 
 
 @app.route("/me", methods=["GET"])
@@ -46,7 +46,7 @@ def me():
 def protegido():
     return jsonify({"msg": "Você está vendo uma mensagem protegida."})
 
-@app.route("/refresh-token", methods=["POST"])
+@app.route("/refresh-token", methods=["GET"])
 @jwt_required(refresh=True)
 def refresh_token():
     identity = get_jwt_identity()

@@ -1,0 +1,15 @@
+div {
+    display: flex;
+    text-align: center;
+    margin: auto;
+}
+
+input[type=password], input[type=email] {
+    padding: 8px;
+    border-radius: 20px;
+    margin-right: 0.5em;
+}
+
+label {
+    margin-right: 0.5em;
+}
